@@ -43,37 +43,37 @@ echo "$kanto[3]と$kanto[4]は関東地方の都道府県です。";
 
 // Q7 連想配列-1
 $prefectural = [
-  ['東京', 'location' => '新宿'],
-  ['千葉', 'location' => '千葉市'],
-  ['埼玉', 'location' => 'さいたま市'],
-  ['神奈川', 'location' => '横浜市'],
-  ['群馬', 'location' => '前橋市'],
-  ['栃木', 'location' => '宇都宮市'],
-  ['茨城', 'location' => '水戸市']
+  '東京' => '新宿',
+  '千葉' => '千葉市',
+  '埼玉' => 'さいたま市',
+  '神奈川' => '横浜市',
+  '群馬' => '前橋市',
+  '栃木' => '宇都宮市',
+  '茨城' => '水戸市'
 ];
 
-for ($i = 0; $i <= 6; $i++) {
-    echo $prefectural[$i]["location"]."\n";
+foreach ($prefectural as $x => $y) {
+    echo $y."\n";
 }
 
 
 // Q8 連想配列-2
-for ($i = 0; $i <= 6; $i++) {
-  if ($prefectural[$i]["location"] === "さいたま市"){
-  echo $prefectural[$i][0]."県の県庁所在地は、".$prefectural[$i]["location"]."です。";
+foreach ($prefectural as $x => $y) {
+  if ($x === '埼玉') {
+    echo $x."県の県庁所在地は、".$y."です。";
   }
 }
 
 
 // Q9 連想配列-3
-$prefectural[] = ['大阪', 'location' => '大阪市'];
-$prefectural[] = ['愛知', 'location' => '名古屋市'];
+$prefectural['大阪'] = '大阪市';
+$prefectural['愛知'] = '名古屋';
 
-for ($i = 0; $i <= 8; $i++) {
-  if ($i < 6){
-  echo $prefectural[$i][0]."県の県庁所在地は、".$prefectural[$i]["location"]."です。\n";
+foreach ($prefectural as $x => $y) {
+  if ($x === '大阪' || $x === '愛知') {
+    echo $x.'は関東地方ではありません。'."\n";
   } else {
-  echo $prefectural[$i][0]."県は関東地方ではありません。\n";
+      echo $x."県の県庁所在地は、".$y."です。"."\n";
   }
 }
 
@@ -91,10 +91,10 @@ hello('安藤');
 function calcTaxInPrice($price)
 {
   $taxInPrice = $price * 1.1;
-  echo $price.'円の商品の税込み価格は'.$taxInPrice.'円です。';
+  return $price.'円の商品の税込み価格は'.$taxInPrice.'円です。';
 }
 
-calcTaxInPrice(1000);
+echo calcTaxInPrice(1000);
 
 
 // Q12 関数とif文
@@ -103,12 +103,12 @@ function distinguishNum($num)
   if ($num % 2 === 0) {
     echo $num.'は偶数です。';
   } else {
-    echo $num.'は奇数です。';
+    return $num.'は奇数です。';
   }
 }
 
-distinguishNum(11);
-distinguishNum(24);
+echo distinguishNum(11);
+echo distinguishNum(24);
 
 // Q13 関数とswitch文
 function evaluateGrade($grade)
@@ -127,12 +127,12 @@ function evaluateGrade($grade)
     echo '不合格です。'."\n";
     break;
     default:
-    echo '判定不明です。講師に問い合わせてください。'."\n";
+    return '判定不明です。講師に問い合わせてください。'."\n";
     break;
   }
 }
 
-  evaluateGrade('B');
-  evaluateGrade('F');
+echo  evaluateGrade('B');
+echo  evaluateGrade('F');
 
 ?>
