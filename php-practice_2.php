@@ -2,16 +2,17 @@
 // Q1 tic-tac問題
 for ($i = 1; $i <= 100; $i++) {
   if ($i % 4 == 0 && $i % 5 == 0) {
-    echo 'tic-tac' ."\n";
-  } else
-  if ($i % 5 == 0) {
-    echo 'tac' ."\n";
-  } else
-  if ($i % 4 == 0) {
-    echo 'tic'."\n";
-  } else 
-  echo $i."\n";
+    echo 'tic-tac' . "\n";
 
+  } else if ($i % 5 == 0) {
+    echo 'tac' . "\n";
+
+  } else if ($i % 4 == 0) {
+    echo 'tic'. "\n";
+
+  } else 
+  echo $i . "\n";
+  
 }
 
 
@@ -35,12 +36,12 @@ $personalInfos = [
 ];
 
 // 問題１
-echo $personalInfos[1]['name'].'の電話番号は'.$personalInfos[1]['tel'].'です。';
+echo $personalInfos[1]['name'] . 'の電話番号は' . $personalInfos[1]['tel'] . 'です。';
 
 
 // 問題２
-foreach($personalInfos as $x => $personalInfos) {
-  echo ($x + 1).'番目の'.$personalInfos['name'] .'のメールアドレスは'. $personalInfos['mail'] .'で、電話番号は'. $personalInfos['tel'].'です。'."\n";
+foreach($personalInfos as $x => $personalInfo) {
+  echo ($x + 1) . '番目の' . $personalInfo['name'] . 'のメールアドレスは' . $personalInfo['mail'] . 'で、電話番号は' . $personalInfo['tel'] . 'です。' . "\n";
 }
 
 
@@ -67,13 +68,13 @@ class Student
 
     public function attend($lesson)
     {
-        echo $this->studentName.'は'.$lesson.'の授業に参加しました。学籍番号：'.$this->studentId;
+        echo $this->studentName . 'は' . $lesson . 'の授業に参加しました。学籍番号：' . $this->studentId;
     }
 }
 
 $hirano = new Student(20,'平野');
 
-echo '学籍番号'.$hirano->studentId.'番の生徒は'.$hirano->studentName.'です。';
+echo '学籍番号' . $hirano->studentId . '番の生徒は' . $hirano->studentName . 'です。';
 
 
 // Q4 オブジェクト-2
