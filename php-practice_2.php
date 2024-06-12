@@ -3,16 +3,12 @@
 for ($i = 1; $i <= 100; $i++) {
   if ($i % 4 == 0 && $i % 5 == 0) {
     echo 'tic-tac' . "\n";
-
   } else if ($i % 5 == 0) {
     echo 'tac' . "\n";
-
   } else if ($i % 4 == 0) {
     echo 'tic'. "\n";
-
   } else 
   echo $i . "\n";
-  
 }
 
 

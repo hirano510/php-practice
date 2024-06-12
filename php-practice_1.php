@@ -88,11 +88,14 @@ foreach ($prefectures as $prefecture => $location) {
 // Q10 関数-1
 function hello($name = '田中') 
 {
-  echo $name . 'さん、こんんちは。' . "\n";
+  return $name . 'さん、こんんちは。' . "\n";
 }
 
-hello('金谷');
-hello('安藤');
+$kanetani = hello('金谷');
+$ando = hello('安藤');
+
+echo $kanetani;
+echo $ando;
 
 
 // Q11 関数-2
@@ -110,7 +113,7 @@ echo '1000円の商品の税込み価格は' . $taxInPrice . '円です。';
 function distinguishNum($num) 
 {
   if ($num % 2 === 0) {
-    echo $num . 'は偶数です。';
+    return $num . 'は偶数です。';
   } else {
     return $num . 'は奇数です。';
   }
@@ -128,15 +131,15 @@ function evaluateGrade($grade)
   switch ($grade) {
     case 'A':
     case 'B':
-    echo '合格です。' . "\n";
+    return '合格です。' . "\n";
     break;
 
     case 'C':
-    echo '合格ですが追加課題がります。' . "\n";
+    return '合格ですが追加課題がります。' . "\n";
     break;
 
     case 'D':
-    echo '不合格です。' . "\n";
+    return '不合格です。' . "\n";
     break;
     default:
     return '判定不明です。講師に問い合わせてください。' . "\n";
